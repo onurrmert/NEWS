@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/CnnMenu"
+        android:title="CNN"
+        />
+    <item
+        android:id="@+id/BBCMenu"
+        android:title="BBC"
+        />
+    <item
+        android:id="@+id/usaTodayMenu"
+        android:title="UsaToday"
+        />
+    <item
+        android:id="@+id/popularityMenu"
+        android:title="Popularity"
+        />
+    <item
+        android:id="@+id/timeNewsMenu"
+        android:title="Time"
+        />
+    <item
+        android:id="@+id/businessNewsMenu"
+        android:title="BusinessNews"
+        />
+</menu>

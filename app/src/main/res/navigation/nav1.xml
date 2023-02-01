@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav1"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.onurmert.news.View.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_currentFragment"
+            app:destination="@id/currentFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentFragment"
+        android:name="com.onurmert.news.View.EverythingNewsFragment"
+        android:label="fragment_current"
+        tools:layout="@layout/fragment_everythingnews" >
+        <action
+            android:id="@+id/action_currentFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+        <action
+            android:id="@+id/action_currentFragment_to_cnnNewsFragment"
+            app:destination="@id/cnnNewsFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_currentFragment_to_bbcNewsFragment"
+            app:destination="@id/bbcNewsFragment" />
+        <action
+            android:id="@+id/action_currentFragment_to_usaTodayNewsFragment"
+            app:destination="@id/usaTodayNewsFragment" />
+        <action
+            android:id="@+id/action_currentFragment_to_popularityNewsFragment"
+            app:destination="@id/popularityNewsFragment" />
+        <action
+            android:id="@+id/action_currentFragment_to_timeNewsFragment"
+            app:destination="@id/timeNewsFragment" />
+        <action
+            android:id="@+id/action_currentFragment_to_businessNewsFragment"
+            app:destination="@id/businessNewsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/everythingDetailFragment"
+        android:name="com.onurmert.news.View.NewsDetailFragment"
+        android:label="fragment_everything_detail"
+        tools:layout="@layout/fragment_news_detail" >
+        <argument android:name="author"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_everythingDetailFragment_to_currentFragment"
+            app:destination="@id/currentFragment"
+            app:popUpTo="@id/everythingDetailFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:defaultValue=""
+            android:name="urlToImage" />
+        <argument
+            android:name="description"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="history"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_everythingDetailFragment_to_cnnNewsFragment"
+            app:destination="@id/cnnNewsFragment"
+            app:popUpTo="@id/everythingDetailFragment"
+            app:popUpToInclusive="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/cnnNewsFragment"
+        android:name="com.onurmert.news.View.CnnNewsFragment"
+        android:label="fragment_cnn_news"
+        tools:layout="@layout/fragment_cnn_news" >
+        <action
+            android:id="@+id/action_cnnNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:defaultValue=""
+            android:name="urlToImage" />
+        <argument
+            android:name="description"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="history"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="author"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+        <action
+            android:id="@+id/action_cnnNewsFragment_to_currentFragment"
+            app:destination="@id/currentFragment"
+            app:popUpTo="@id/cnnNewsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/bbcNewsFragment"
+        android:name="com.onurmert.news.View.BbcNewsFragment"
+        android:label="fragment_bbc_news"
+        tools:layout="@layout/fragment_bbc_news" >
+        <action
+            android:id="@+id/action_bbcNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usaTodayNewsFragment"
+        android:name="com.onurmert.news.View.UsaTodayNewsFragment"
+        android:label="fragment_usa_today_news"
+        tools:layout="@layout/fragment_usa_today_news" >
+        <action
+            android:id="@+id/action_usaTodayNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/popularityNewsFragment"
+        android:name="com.onurmert.news.View.PopularityNewsFragment"
+        android:label="fragment_popularity_news"
+        tools:layout="@layout/fragment_popularity_news" >
+        <action
+            android:id="@+id/action_popularityNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeNewsFragment"
+        android:name="com.onurmert.news.View.TimeNewsFragment"
+        android:label="fragment_time_news"
+        tools:layout="@layout/fragment_time_news" >
+        <action
+            android:id="@+id/action_timeNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessNewsFragment"
+        android:name="com.onurmert.news.View.BusinessNewsFragment"
+        android:label="fragment_business_news"
+        tools:layout="@layout/fragment_business_news" >
+        <action
+            android:id="@+id/action_businessNewsFragment_to_everythingDetailFragment"
+            app:destination="@id/everythingDetailFragment" />
+    </fragment>
+</navigation>
